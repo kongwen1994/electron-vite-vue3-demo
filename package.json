@@ -1,0 +1,66 @@
+{
+  "name": "electronvitedemo",
+  "private": true,
+  "version": "0.0.0",
+  "description": "test electron demo",
+  "author": "kongwen",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "cross-env NODE_ENV=development nodemon --exec electron . --watch ./ --ext .js,.html,.css,.vue",
+    "electron:build": "vite build && electron-builder",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "dependencies": {
+    "axios": "^1.3.4",
+    "electron-squirrel-startup": "^1.0.0",
+    "vite-plugin-commonjs-externals": "^0.1.1",
+    "vue": "^3.2.45",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.1.1",
+    "@electron-forge/maker-deb": "^6.1.1",
+    "@electron-forge/maker-rpm": "^6.1.1",
+    "@electron-forge/maker-squirrel": "^6.1.1",
+    "@electron-forge/maker-zip": "^6.1.1",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "cross-env": "^7.0.3",
+    "electron": "^23.1.2",
+    "nodemon": "^2.0.21",
+    "path-browserify": "^1.0.1",
+    "vite": "^4.1.0",
+    "vite-plugin-optimizer": "^1.4.2"
+  },
+    "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "electron_quick_start"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}

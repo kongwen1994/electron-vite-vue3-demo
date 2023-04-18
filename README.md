@@ -7,7 +7,11 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
 
-##在mac上的坑
-1 用electron-builder打包时，可能出现错误：
+## 可能出现的坑
+1 在mac用electron-builder打包时，可能出现错误：
 在mac上打包时出现下载electron-v2.0.18-darwin-x64.zip下载错误
 解决：参考  https://blog.csdn.net/weixin_44287376/article/details/103630809
+
+2 推荐用官方推荐的electron-forge打包。用electron-builder打包可能会出现一些错误。
+
+3 打包时，先用vite打包，再用electron-forge打包
